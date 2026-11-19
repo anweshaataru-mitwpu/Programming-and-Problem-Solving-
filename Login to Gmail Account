@@ -9,15 +9,12 @@ int main(void) {
     curl = curl_easy_init();
 
     if (curl) {
-
         curl_easy_setopt(curl, CURLOPT_USERNAME, "your_email@gmail.com");
         curl_easy_setopt(curl, CURLOPT_PASSWORD, "your_16_char_app_password");
-
         curl_easy_setopt(curl, CURLOPT_URL, "imaps://://gmail.com");
 
-
         res = curl_easy_perform(curl);
-        
+
         if (res != CURLE_OK) {
             fprintf(stderr, "Login failed: %s\n", curl_easy_strerror(res));
         } else {
@@ -30,3 +27,5 @@ int main(void) {
     curl_global_cleanup();
     return (int)res;
 }
+
+        
